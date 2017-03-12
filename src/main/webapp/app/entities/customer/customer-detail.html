@@ -1,0 +1,55 @@
+
+<div>
+    <h2><span>Customer</span> {{vm.customer.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row jh-entity-details">
+        <dt><span>Email</span></dt>
+        <dd>
+            <span>{{vm.customer.email}}</span>
+        </dd>
+        <dt><span>Password</span></dt>
+        <dd>
+            <span>{{vm.customer.password}}</span>
+        </dd>
+        <dt><span>Created Date</span></dt>
+        <dd>
+            <span>{{vm.customer.createdDate}}</span>
+        </dd>
+        <dt><span>Image</span></dt>
+        <dd>
+            <span>{{vm.customer.image}}</span>
+        </dd>
+        <dt><span>Social Id</span></dt>
+        <dd>
+            <span>{{vm.customer.socialId}}</span>
+        </dd>
+        <dt><span>Social Type</span></dt>
+        <dd>
+            <span>{{vm.customer.socialType}}</span>
+        </dd>
+        <dt><span>Phone</span></dt>
+        <dd>
+            <span>{{vm.customer.phone}}</span>
+        </dd>
+        <dt><span>Device Id</span></dt>
+        <dd>
+            <span>{{vm.customer.deviceId}}</span>
+        </dd>
+        <dt><span>Area Id</span></dt>
+        <dd>
+            <span>{{vm.customer.areaId}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="customer-detail.edit({id:vm.customer.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

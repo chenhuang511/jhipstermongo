@@ -1,0 +1,67 @@
+
+<div>
+    <h2><span>On Off Log</span> {{vm.onOffLog.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row jh-entity-details">
+        <dt><span>Area Id</span></dt>
+        <dd>
+            <span>{{vm.onOffLog.areaId}}</span>
+        </dd>
+        <dt><span>Device Id</span></dt>
+        <dd>
+            <span>{{vm.onOffLog.deviceId}}</span>
+        </dd>
+        <dt><span>Switch Id</span></dt>
+        <dd>
+            <span>{{vm.onOffLog.switchId}}</span>
+        </dd>
+        <dt><span>Customer Id</span></dt>
+        <dd>
+            <span>{{vm.onOffLog.customerId}}</span>
+        </dd>
+        <dt><span>Datetime Log</span></dt>
+        <dd>
+            <span>{{vm.onOffLog.datetimeLog}}</span>
+        </dd>
+        <dt><span>Start Time</span></dt>
+        <dd>
+            <span>{{vm.onOffLog.startTime}}</span>
+        </dd>
+        <dt><span>Finish Time</span></dt>
+        <dd>
+            <span>{{vm.onOffLog.finishTime}}</span>
+        </dd>
+        <dt><span>Uid</span></dt>
+        <dd>
+            <span>{{vm.onOffLog.uid}}</span>
+        </dd>
+        <dt><span>Status</span></dt>
+        <dd>
+            <span>{{vm.onOffLog.status}}</span>
+        </dd>
+        <dt><span>Type</span></dt>
+        <dd>
+            <span>{{vm.onOffLog.type}}</span>
+        </dd>
+        <dt><span>Command</span></dt>
+        <dd>
+            <span>{{vm.onOffLog.command}}</span>
+        </dd>
+        <dt><span>Add Info</span></dt>
+        <dd>
+            <span>{{vm.onOffLog.addInfo}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="on-off-log-detail.edit({id:vm.onOffLog.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

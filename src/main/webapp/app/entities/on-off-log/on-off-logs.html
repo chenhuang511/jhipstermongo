@@ -1,0 +1,82 @@
+<div>
+    <h2>On Off Logs</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="on-off-log.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new On Off Log
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="areaId"><span>Area Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="deviceId"><span>Device Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="switchId"><span>Switch Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="customerId"><span>Customer Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="datetimeLog"><span>Datetime Log</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="startTime"><span>Start Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="finishTime"><span>Finish Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="uid"><span>Uid</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="status"><span>Status</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="type"><span>Type</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="command"><span>Command</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="addInfo"><span>Add Info</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="onOffLog in vm.onOffLogs track by onOffLog.id">
+                    <td><a ui-sref="on-off-log-detail({id:onOffLog.id})">{{onOffLog.id}}</a></td>
+                    <td>{{onOffLog.areaId}}</td>
+                    <td>{{onOffLog.deviceId}}</td>
+                    <td>{{onOffLog.switchId}}</td>
+                    <td>{{onOffLog.customerId}}</td>
+                    <td>{{onOffLog.datetimeLog}}</td>
+                    <td>{{onOffLog.startTime}}</td>
+                    <td>{{onOffLog.finishTime}}</td>
+                    <td>{{onOffLog.uid}}</td>
+                    <td>{{onOffLog.status}}</td>
+                    <td>{{onOffLog.type}}</td>
+                    <td>{{onOffLog.command}}</td>
+                    <td>{{onOffLog.addInfo}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="on-off-log-detail({id:onOffLog.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="on-off-log.edit({id:onOffLog.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="on-off-log.delete({id:onOffLog.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

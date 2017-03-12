@@ -1,0 +1,31 @@
+
+<div>
+    <h2><span>Role</span> {{vm.role.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row jh-entity-details">
+        <dt><span>Customer Id</span></dt>
+        <dd>
+            <span>{{vm.role.customerId}}</span>
+        </dd>
+        <dt><span>Switcher Id</span></dt>
+        <dd>
+            <span>{{vm.role.switcherId}}</span>
+        </dd>
+        <dt><span>Permission Id</span></dt>
+        <dd>
+            <span>{{vm.role.permissionId}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="role-detail.edit({id:vm.role.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

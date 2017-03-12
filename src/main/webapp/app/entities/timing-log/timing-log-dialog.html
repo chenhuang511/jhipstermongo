@@ -1,0 +1,130 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myTimingLogLabel">Create or edit a Timing Log</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.timingLog.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.timingLog.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_datetimeLog">Datetime Log</label>
+            <input type="text" class="form-control" name="datetimeLog" id="field_datetimeLog"
+                    ng-model="vm.timingLog.datetimeLog"
+                    required/>
+            <div ng-show="editForm.datetimeLog.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.datetimeLog.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_switcherId">Switcher Id</label>
+            <input type="number" class="form-control" name="switcherId" id="field_switcherId"
+                    ng-model="vm.timingLog.switcherId"
+                    required/>
+            <div ng-show="editForm.switcherId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.switcherId.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.switcherId.$error.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_deviceId">Device Id</label>
+            <input type="number" class="form-control" name="deviceId" id="field_deviceId"
+                    ng-model="vm.timingLog.deviceId"
+                    required/>
+            <div ng-show="editForm.deviceId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.deviceId.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.deviceId.$error.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_startTime">Start Time</label>
+            <input type="text" class="form-control" name="startTime" id="field_startTime"
+                    ng-model="vm.timingLog.startTime"
+                    required/>
+            <div ng-show="editForm.startTime.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.startTime.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_duration">Duration</label>
+            <input type="text" class="form-control" name="duration" id="field_duration"
+                    ng-model="vm.timingLog.duration"
+                    required/>
+            <div ng-show="editForm.duration.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.duration.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_uid">Uid</label>
+            <input type="text" class="form-control" name="uid" id="field_uid"
+                    ng-model="vm.timingLog.uid"
+                    required/>
+            <div ng-show="editForm.uid.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.uid.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_command">Command</label>
+            <input type="number" class="form-control" name="command" id="field_command"
+                    ng-model="vm.timingLog.command"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_valueTiming">Value Timing</label>
+            <input type="number" class="form-control" name="valueTiming" id="field_valueTiming"
+                    ng-model="vm.timingLog.valueTiming"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_valueLoop">Value Loop</label>
+            <input type="text" class="form-control" name="valueLoop" id="field_valueLoop"
+                    ng-model="vm.timingLog.valueLoop"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_onofflogId">Onofflog Id</label>
+            <input type="number" class="form-control" name="onofflogId" id="field_onofflogId"
+                    ng-model="vm.timingLog.onofflogId"
+                    />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

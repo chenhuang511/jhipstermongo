@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "deviceId",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "number",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "counter",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "countTiming",
+            "fieldType": "Long"
+        }
+    ],
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "switcher",
+    "pagination": "pagination"
+}

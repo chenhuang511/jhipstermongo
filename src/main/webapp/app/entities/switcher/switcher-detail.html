@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span>Switcher</span> {{vm.switcher.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row jh-entity-details">
+        <dt><span>Device Id</span></dt>
+        <dd>
+            <span>{{vm.switcher.deviceId}}</span>
+        </dd>
+        <dt><span>Name</span></dt>
+        <dd>
+            <span>{{vm.switcher.name}}</span>
+        </dd>
+        <dt><span>Number</span></dt>
+        <dd>
+            <span>{{vm.switcher.number}}</span>
+        </dd>
+        <dt><span>Status</span></dt>
+        <dd>
+            <span>{{vm.switcher.status}}</span>
+        </dd>
+        <dt><span>Counter</span></dt>
+        <dd>
+            <span>{{vm.switcher.counter}}</span>
+        </dd>
+        <dt><span>Count Timing</span></dt>
+        <dd>
+            <span>{{vm.switcher.countTiming}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="switcher-detail.edit({id:vm.switcher.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

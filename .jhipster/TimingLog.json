@@ -1,0 +1,68 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "datetimeLog",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "switcherId",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "deviceId",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "startTime",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "duration",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "uid",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "command",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "valueTiming",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "valueLoop",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "onofflogId",
+            "fieldType": "Long"
+        }
+    ],
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "timing_log",
+    "pagination": "pagination"
+}
